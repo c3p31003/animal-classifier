@@ -1,0 +1,66 @@
+
+body {
+font-family: sans-serif;
+color: #666;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+
+.title {
+    text-align: center;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 32px; /* ← 大きめに変更 */
+}
+
+.input-area {
+border: 2px solid #aacfd0;
+width: 800px;
+min-height: 400px;
+padding: 16px;
+margin: 16px auto;
+border-radius: 8px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* input[type=file]を非表示にする */
+.input_file {
+    display: none;
+}
+
+/* ラベルをボタン風に */
+.custom-file-label {
+    display: inline-block;
+    background-color: #aacfd0;
+    color: white;
+    padding: 12px 24px; /* ← パディング拡大 */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px; /* ← フォントサイズ拡大 */
+    margin-bottom: 16px;
+}
+.upload_bottun {
+    background-color: #aacfd0;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* ← パディング拡大 */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px; /* ← フォントサイズ拡大 */
+    margin-left: 12px;
+}
+
+.input-image {
+    
+    width: auto;
+    height: 80%;
+    object-fit: contain;
+    margin:20px;
+}

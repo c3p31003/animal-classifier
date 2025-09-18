@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動物AI判定</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <h1 class="title">画像をアップロードしてください</h1>
+
+    <div class="input-area">
+        <form method="post" enctype="multipart/form-data">
+            <label class="custom-file-label">
+                ファイルを選択
+                <input class="input_file" type="file" name="file" id="fileInput" accept="image/*">
+            </label>
+            <input class="upload_bottun" type="submit" value="アップロード">
+        </form>
+
+        <!-- ファイル名表示 -->
+        <p id="fileName" style="margin-top: 8px;"></p>
+
+        <!-- プレビュー画像 -->
+        <img id="preview" class="input-image" src="#" alt="プレビュー画像" style="display: none;">
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+        const fileNameText = document.getElementById('fileName');
+
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                fileNameText.textContent = `選択されたファイル: ${file.name}`;
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                fileNameText.textContent = "";
+                preview.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
